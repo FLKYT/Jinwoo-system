@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jinwoo System AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="system-ui">
+    <h1 id="rank">Rank: E Hunter</h1>
+    <p id="level">Level: 1</p>
+    <p id="exp">EXP: 0/1000</p>
+
+    <div class="bar"><span id="hp-bar"></span></div>
+    <div class="bar"><span id="str-bar"></span></div>
+
+    <button id="start-task">Start Daily Task</button>
+    <button id="complete-task" disabled>Complete Task</button>
+
+    <div id="inventory"></div>
+    <div id="ai-chat"></div>
+  </div>
+  <script src="lib/game.js"></script>
+  <script src="lib/tasks.js"></script>
+  <script src="lib/rewards.js"></script>
+  <script src="components/ui.js"></script>
+  <script src="components/ai.js"></script>
+  <script src="script.js"></script>
+</body>
+  </html>
