@@ -21,3 +21,25 @@ document.getElementById("complete-task").addEventListener("click", () => {
 });
 
 updateUI();
+document.addEventListener("DOMContentLoaded", () => {
+  const startBtn = document.getElementById("startBtn");
+  const completeBtn = document.getElementById("completeBtn");
+
+  if (startBtn) {
+    startBtn.addEventListener("click", () => {
+      alert("Daily Task Started!");
+      startBtn.style.display = "none";
+      setTimeout(() => {
+        completeBtn.style.display = "inline-block";
+      }, 20000); // show after 20 sec
+    });
+  }
+
+  if (completeBtn) {
+    completeBtn.addEventListener("click", () => {
+      alert("Task Completed! +100 EXP");
+      completeBtn.style.display = "none";
+      startBtn.style.display = "inline-block";
+    });
+  }
+});
