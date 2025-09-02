@@ -43,3 +43,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const inventoryBtn = document.getElementById("inventoryBtn");
+  const inventoryPanel = document.getElementById("inventoryPanel");
+  const closeInventory = document.getElementById("closeInventory");
+
+  if (inventoryBtn && inventoryPanel) {
+    inventoryBtn.addEventListener("click", () => {
+      inventoryPanel.style.display = "block";
+    });
+  }
+
+  if (closeInventory) {
+    closeInventory.addEventListener("click", () => {
+      inventoryPanel.style.display = "none";
+    });
+  }
+});
