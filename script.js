@@ -60,3 +60,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+let level = 1;
+let exp = 0;
+let expNeeded = 1000;
+let rank = "E Hunter";
+let hp = 100;
+let str = 10;
+
+function updateUI() {
+  document.getElementById("level").textContent = level;
+  document.getElementById("rank").textContent = rank;
+  document.getElementById("exp").textContent = exp;
+  document.getElementById("expNeeded").textContent = expNeeded;
+  document.getElementById("hp").textContent = hp;
+  document.getElementById("str").textContent = str;
+
+  document.getElementById("expBar").style.width = (exp / expNeeded * 100) + "%";
+  document.getElementById("hpBar").style.width = hp + "%";
+  document.getElementById("strBar").style.width = str + "%";
+}
+
+updateUI();
