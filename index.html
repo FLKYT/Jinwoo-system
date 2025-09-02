@@ -1,36 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Jinwoo System AI</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[SYSTEM]</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="system-ui">
-    <h1 id="rank">Rank: E Hunter</h1>
-    <p id="level">Level: 1</p>
-    <p id="exp">EXP: 0/1000</p>
-
-    <div class="bar"><span id="hp-bar"></span></div>
-    <div class="bar"><span id="str-bar"></span></div>
-
-    <button id="start-task">Start Daily Task</button>
-    <button id="complete-task" disabled>Complete Task</button>
-
-    <div id="inventory"></div>
-    <div id="ai-chat"></div>
+  <div class="navbar">
+    <button class="tab-btn active" data-tab="system">SYSTEM</button>
+    <button class="tab-btn" data-tab="inventory">INVENTORY</button>
   </div>
+
+  <div id="system" class="tab active">
+    <h1>[SYSTEM DASHBOARD]</h1>
+    <div class="dashboard">
+      <!-- Hunter Status -->
+      <div class="card status">
+        <h2>Hunter Status</h2>
+        <p id="rank">E Rank</p>
+        <p id="level">Level 1</p>
+        <div class="bar">
+          <span>EXP</span>
+          <div class="progress"><div id="exp-bar"></div></div>
+          <small id="exp-text">0 / 1000</small>
+        </div>
+        <div class="bar">
+          <span>HP</span>
+          <div class="progress"><div id="hp-bar"></div></div>
+          <small id="hp-text">100 / 100</small>
+        </div>
+        <div class="bar">
+          <span>STR</span>
+          <div class="progress"><div id="str-bar"></div></div>
+          <small id="str-text">0</small>
+        </div>
+        <p>Tasks Done: <span id="tasks-done">0</span></p>
+        <p>Next Gift: <span id="next-gift">15</span></p>
+      </div>
+
+      <!-- Daily Quest -->
+      <div class="card quests">
+        <h2>Daily Quest</h2>
+        <ul id="task-list"></ul>
+        <button id="start-btn">Start Quest</button>
+        <button id="complete-btn" disabled>Complete Quest</button>
+      </div>
+
+      <!-- System Status -->
+      <div class="card system-status">
+        <h2>System Status</h2>
+        <p>Connection: <span class="green">ACTIVE</span></p>
+        <p>Server Status: <span class="green">ONLINE</span></p>
+        <p>Last Update: <span id="clock"></span></p>
+      </div>
+
+      <!-- Achievements -->
+      <div class="card achievements">
+        <h2>Achievements</h2>
+        <p>Tasks Completed: <span id="achieve-tasks">0</span></p>
+        <p>Potions Used: <span id="achieve-potions">0</span></p>
+        <p>Gift Boxes Opened: <span id="achieve-gifts">0</span></p>
+      </div>
+
+      <!-- Gift Box -->
+      <div class="card gift">
+        <h2>Gift Box</h2>
+        <p id="gift-status">Reach Level 15</p>
+        <p>Loot Table:</p>
+        <ul>
+          <li>70% Random EXP (50-200)</li>
+          <li>15% Potion (HP/STR)</li>
+          <li>10% Magical Stone</li>
+          <li>5% Epic Reward</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <script src="lib/game.js"></script>
   <script src="lib/tasks.js"></script>
   <script src="lib/rewards.js"></script>
   <script src="components/ui.js"></script>
   <script src="components/ai.js"></script>
   <script src="script.js"></script>
-  <script src="lib/game.js"></script>
-  <script src="lib/tasks.js"></script>
-  <script src="lib/rewards.js"></script>
-  <script src="components/ui.js"></script>
-  <script src="components/ai.js"></script>
-  <script src="script.js"></script> <!-- main file -->
 </body>
   </html>
